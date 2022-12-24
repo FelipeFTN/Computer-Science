@@ -1,0 +1,7 @@
+# Mac Files
+.DS_Store
+
+# Temporary files
+*.ctb~
+*.ctb~~
+*.ctb~~~
