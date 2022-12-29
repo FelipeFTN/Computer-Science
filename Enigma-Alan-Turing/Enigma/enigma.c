@@ -5,14 +5,12 @@
 
 int Enigma();
 
-int Enigma(char *raw, char *result)
+int Enigma(char *raw, char *decrypted, int algorithm)
 {
-	int algorithm = 5;
 	char* alphabet = "abcdefghijklmnopqrstuvwxyz";
 	char* find, letter;
 	int index;
 	
-	printf("%s\n", raw);
 	for (int i = 0; raw[i] != '\0'; i++)
 	{
 		if (raw[i] != ' ')
@@ -25,13 +23,11 @@ int Enigma(char *raw, char *result)
 				index =	(strlen(alphabet) - index);
 				index = algorithm - index;
 				index = abs(index);
-			} else {
-				index = index + algorithm;
-			}
+			} else { index = index + algorithm; }
 
 			letter = alphabet[index];
-			result[i] = letter;
-		} else { printf(" "); result[i] = ' '; }
+			decrypted[i] = letter;
+		} else { decrypted[i] = ' '; }
 	}
 
 	return 0;

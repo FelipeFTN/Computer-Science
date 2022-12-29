@@ -1,16 +1,20 @@
-#include "Enigma/enigma.h"
 #include <stdio.h>
+
+#include "Enigma/enigma.h"
 
 int main()
 {
-	char result[256] = { 0 };
+	char encrypt[256];
+	char decrypted[256];
 	int err;
+	
+	printf("Message to encrypt: ");
+	scanf("%[^\n]", encrypt);
 
-	err = Enigma("hello world", result);
+	err = Enigma(encrypt, decrypted, 5);
 	if (err != 0)
 		return 1;
-
-	printf("%s", result);
+	printf("Encrypted: %s\n", decrypted);
 
 	return 0;
 }
