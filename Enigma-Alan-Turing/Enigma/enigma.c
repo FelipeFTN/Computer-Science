@@ -3,13 +3,13 @@
 #include <stdio.h>
 #include <ctype.h>
 
-// Enigma
-int main()
+int Enigma();
+
+int Enigma(char *raw, char *result)
 {
 	int algorithm = 5;
 	char* alphabet = "abcdefghijklmnopqrstuvwxyz";
-	char* raw = "Hello World";
-	char* find, encoded;
+	char* find, letter;
 	int index;
 	
 	printf("%s\n", raw);
@@ -29,9 +29,9 @@ int main()
 				index = index + algorithm;
 			}
 
-			encoded = alphabet[index];
-			printf("%c", encoded);
-		} else { printf(" "); }
+			letter = alphabet[index];
+			result[i] = letter;
+		} else { printf(" "); result[i] = ' '; }
 	}
 
 	return 0;
