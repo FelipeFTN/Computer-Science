@@ -5,3 +5,6 @@
 *.ctb~
 *.ctb~~
 *.ctb~~~
+
+# Object files
+*.o
